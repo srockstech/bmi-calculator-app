@@ -11,7 +11,7 @@ class BMICalculator extends StatelessWidget {
       theme: ThemeData.dark().copyWith(
         colorScheme: ThemeData().colorScheme.copyWith(
               primary: Color(0xFF0A0E21),
-              secondary: Colors.pink,
+              secondary: Color(0xFFEB155),
             ),
         scaffoldBackgroundColor: Color(0xFF0A0E21),
         appBarTheme: AppBarTheme(
@@ -28,14 +28,8 @@ class BMICalculator extends StatelessWidget {
               ),
             ],
           ),
-          color: Colors.pink,
+          color: Color(0xFF0A0E21),
           toolbarHeight: 40,
-          shape: ContinuousRectangleBorder(
-            borderRadius: const BorderRadius.only(
-              bottomLeft: Radius.circular(70.0),
-              bottomRight: Radius.circular(70.0),
-            ),
-          ),
           elevation: 0,
           centerTitle: true,
         ),

@@ -1,4 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'card_widget.dart';
+import 'gender_card_content.dart';
+
+const inactiveCardColour = Color(0xFF111328);
+const activeCardColour = Color(0xFF1E1D33);
+const calculateButtonColour = Color(0xFFEB1555);
+
+enum Gender { male, female }
 
 class InputPage extends StatefulWidget {
   @override
@@ -6,6 +15,7 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
+  Gender selectedGender;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,21 +25,43 @@ class _InputPageState extends State<InputPage> {
       body: Column(
         children: [
           Expanded(
-            flex: 1,
-            child: Container(),
-          ),
-          Expanded(
             flex: 30,
             child: Row(
               children: [
                 Expanded(
-                  child: ReusableCard(
-                    colour: Color(0xFF1E1D33),
+                  child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        selectedGender = Gender.male;
+                      });
+                    },
+                    child: ReusableCard(
+                      cardChild: GenderCardContent(
+                        icon: FontAwesomeIcons.male,
+                        title: 'MALE',
+                      ),
+                      colour: selectedGender == Gender.male
+                          ? activeCardColour
+                          : inactiveCardColour,
+                    ),
                   ),
                 ),
                 Expanded(
-                  child: ReusableCard(
-                    colour: Color(0xFF1E1D33),
+                  child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        selectedGender = Gender.female;
+                      });
+                    },
+                    child: ReusableCard(
+                      cardChild: GenderCardContent(
+                        icon: FontAwesomeIcons.female,
+                        title: 'FEMALE',
+                      ),
+                      colour: selectedGender == Gender.female
+                          ? activeCardColour
+                          : inactiveCardColour,
+                    ),
                   ),
                 ),
               ],
@@ -38,7 +70,7 @@ class _InputPageState extends State<InputPage> {
           Expanded(
             flex: 30,
             child: ReusableCard(
-              colour: Color(0xFF1E1D33),
+              colour: activeCardColour,
             ),
           ),
           Expanded(
@@ -47,37 +79,30 @@ class _InputPageState extends State<InputPage> {
               children: [
                 Expanded(
                   child: ReusableCard(
-                    colour: Color(0xFF1E1D33),
+                    colour: activeCardColour,
                   ),
                 ),
                 Expanded(
                   child: ReusableCard(
-                    colour: Color(0xFF1E1D33),
+                    colour: activeCardColour,
                   ),
                 ),
               ],
             ),
           ),
           Expanded(
-            flex: 1,
-            child: Container(),
+            flex: 10,
+            child: Container(
+              margin: EdgeInsets.only(top: 10),
+              color: calculateButtonColour,
+              child: Center(
+                  child: Text(
+                'Calculate',
+                style: TextStyle(fontSize: 18),
+              )),
+            ),
           ),
         ],
-      ),
-    );
-  }
-}
-
-class ReusableCard extends StatelessWidget {
-  final Color colour;
-  ReusableCard({@required this.colour});
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.all(10),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: colour,
       ),
     );
   }
