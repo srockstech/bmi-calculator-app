@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
-
-const titleStyle = TextStyle(
-  height: 2.0,
-  fontSize: 18,
-  color: Color(0xFF8D8E98),
-);
+import 'constants.dart';
 
 class GenderCardContent extends StatelessWidget {
   final IconData icon;
   final String title;
-  GenderCardContent({this.icon, this.title});
+  final Color iconColour;
+  GenderCardContent({this.icon, this.title, this.iconColour});
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -17,11 +13,12 @@ class GenderCardContent extends StatelessWidget {
       children: <Widget>[
         Icon(
           icon,
-          size: 80,
+          size: 65,
+          color: iconColour,
         ),
         Text(
           title,
-          style: titleStyle,
+          style: kTitleStyle,
         ),
       ],
     );
