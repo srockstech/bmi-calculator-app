@@ -15,7 +15,7 @@ const kSliderTrackHeight = 2.0;
 
 const kTitleStyle = TextStyle(
   height: 2.0,
-  fontSize: 16,
+  fontSize: 15,
   fontWeight: FontWeight.w700,
   color: Color(0xFF8D8E98),
   letterSpacing: 1,
