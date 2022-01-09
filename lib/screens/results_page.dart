@@ -4,6 +4,13 @@ import 'package:flutter/material.dart';
 import '../components/bottom_button.dart';
 
 class ResultsPage extends StatelessWidget {
+  final String bmi;
+  final String resultKeyword;
+  final String interpretation;
+  ResultsPage(
+      {@required this.bmi,
+      @required this.resultKeyword,
+      @required this.interpretation});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,15 +47,15 @@ class ResultsPage extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             Text(
-                              'OVERWEIGHT',
+                              resultKeyword,
                               style: kResultKeywordTextStyle,
                             ),
                             Text(
-                              '21.7',
+                              bmi,
                               style: kResultNumberTextStyle,
                             ),
                             Text(
-                              'You have a higher than normal body weight. Try to exercise more.',
+                              interpretation,
                               style: kResultDescriptionStyle,
                               textAlign: TextAlign.center,
                             ),
