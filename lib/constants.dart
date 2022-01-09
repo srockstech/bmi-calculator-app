@@ -25,3 +25,33 @@ const kNumberStyle = TextStyle(
   fontSize: 50.0,
   fontWeight: FontWeight.w900,
 );
+
+const kLargeButtonTextStyle = TextStyle(
+  fontSize: 20,
+  fontWeight: FontWeight.w900,
+  letterSpacing: 2,
+);
+
+const kResultKeywordTextStyle = TextStyle(
+  color: Color(0xFF2BD471),
+  fontSize: 17,
+  fontWeight: FontWeight.bold,
+  letterSpacing: 1,
+);
+
+const kResultNumberTextStyle = TextStyle(
+  fontSize: 80,
+  fontWeight: FontWeight.w900,
+);
+
+const kResultScreenTitleStyle = TextStyle(
+  height: 2,
+  fontSize: 36,
+  fontWeight: FontWeight.bold,
+  letterSpacing: 2,
+);
+
+const kResultDescriptionStyle = TextStyle(
+  fontSize: 20,
+  height: 1.7,
+);
