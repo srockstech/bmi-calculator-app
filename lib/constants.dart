@@ -32,13 +32,6 @@ const kLargeButtonTextStyle = TextStyle(
   letterSpacing: 2,
 );
 
-const kResultKeywordTextStyle = TextStyle(
-  color: Color(0xFF2BD471),
-  fontSize: 17,
-  fontWeight: FontWeight.bold,
-  letterSpacing: 1,
-);
-
 const kResultNumberTextStyle = TextStyle(
   fontSize: 80,
   fontWeight: FontWeight.w900,

@@ -48,7 +48,14 @@ class ResultsPage extends StatelessWidget {
                           children: [
                             Text(
                               resultKeyword,
-                              style: kResultKeywordTextStyle,
+                              style: TextStyle(
+                                color: (resultKeyword == 'NORMAL')
+                                    ? Color(0xFF2BD471)
+                                    : Colors.red,
+                                fontSize: 17,
+                                fontWeight: FontWeight.bold,
+                                letterSpacing: 1,
+                              ),
                             ),
                             Text(
                               bmi,
